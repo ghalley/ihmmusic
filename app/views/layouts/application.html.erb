@@ -11,6 +11,7 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
+<%= link_to "Log in", new_session_path(User.new) if current_user.nil? && params['action'] != 'new' %><br />
 <%= yield %>
 
 </body>
