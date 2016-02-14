@@ -31,12 +31,16 @@ gem 'jquery-rails'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'sass'
+gem 'bourbon'
+gem 'neat'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem "refills"
 end
 
 group :development do
