@@ -8,9 +8,6 @@
 </head>
 <body>
 
-  <%= link_to "Log in", new_session_path(User.new) if current_user.nil? && params['action'] != 'new' %>
-  <%= link_to "Log out", destroy_session_path(User), method: :delete if current_user.present? %>
-
   <%= yield %>
 
 </body>
