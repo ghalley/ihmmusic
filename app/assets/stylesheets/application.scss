@@ -14,4 +14,8 @@
  */
 @import "bourbon";
 @import "neat";
-@import "refills/navigation"
+@import "refills/navigation";
+
+div.container {
+  @include outer-container;
+}
