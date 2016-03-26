@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
-  get 'calendar' => 'application#calendar'
+  get 'calendar' => 'application#calendar', as: 'calendar'
+  get 'documents' => 'application#documents', as: 'documents'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

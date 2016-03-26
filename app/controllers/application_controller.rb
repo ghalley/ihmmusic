@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def calendar
     render 'layouts/calendar'
   end
+
+  def documents
+    render 'layouts/documents'
+  end
 end
