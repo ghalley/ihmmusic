@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @post_months = Post.all.group_by { |p| p.created_at.beginning_of_month}
   end
 
   # GET /posts/1
