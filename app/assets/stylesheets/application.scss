@@ -12,19 +12,3 @@
  *
  *= require_self
  */
-@import "bourbon";
-@import "neat";
-@import "refills/navigation";
-@import "refills/accordion";
-
-div.container {
-  @include outer-container;
-}
-
-div.posts_content {
-  @include span-columns(8);
-}
-
-div.posts_archive {
-  @include span-columns(3);
-}
