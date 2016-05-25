@@ -13,7 +13,7 @@
         <% posts.each do |post| %>
           <ul class="list-group">
             <li class="list-group-item">
-              <%= link_to post.title, post_path(post) %>
+              <%= link_to "#{post.title} - #{post.created_at.strftime("%m/%d")}", post_path(post) %>
             </li>
           </ul>
         <% end %>

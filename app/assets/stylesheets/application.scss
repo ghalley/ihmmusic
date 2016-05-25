@@ -13,3 +13,19 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-default {
+  // background-color: #5da2e3;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #5da2e3;
+}
+
+.navbar-default  a.navbar-brand {
+  color: #5da2e3;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active {
+  color: #5da2e3;
+}
