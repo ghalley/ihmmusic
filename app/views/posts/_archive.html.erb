@@ -3,10 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
-          <%= link_to month.strftime("%B %Y"), "##{month.strftime("%B %Y").gsub(' ', '_')}", role: "button", 'data-toggle' => "collapse", 'data-parent' => "#accordion", 'aria-expanded' => "true", 'aria-controls' => month.strftime("%B %Y").gsub(' ', '_') %>
-          <!-- <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Collapsible Group Item #1
-          </a> -->
+          <%= link_to month.strftime("%B %Y"), "##{month.strftime("%B %Y").gsub(' ', '_')}", role: "button", 'data-toggle' => "collapse", 'data-parent' => "#accordion", 'aria-expanded' => "false", 'aria-controls' => month.strftime("%B %Y").gsub(' ', '_') %>
         </h4>
       </div>
       <div id="<%= month.strftime("%B %Y").gsub(' ', '_') %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
