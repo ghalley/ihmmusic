@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to 'IHM Music', root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="<%= 'active' if params[:controller] == 'posts' && params[:action] == 'index'%>"><%= link_to 'Updates', posts_path %></li>
+        <li class="<%= 'active' if params[:action] == 'calendar' %>"><%= link_to 'Calendar', calendar_path %></li>
+        <li class="<%= 'active' if params[:action] == 'documents' %>"><%= link_to 'Documents', documents_path %></li>
+        <li class="<%= 'active' if params[:controller] == 'posts' && params[:action] == 'new' %>"><%= link_to 'New Posts', new_post_path unless current_user.nil? %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <% if current_user.nil? && params['action'] != 'new' %>
+            <%= link_to "Log in", new_session_path(User.new), class: 'sign-up'  %>
+          <% else %>
+            <%= link_to "Log out", destroy_session_path(User), method: :delete, class: 'sign-up' %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

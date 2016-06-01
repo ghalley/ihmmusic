@@ -10,21 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
  */
-@import "bourbon";
-@import "neat";
-@import "refills/navigation";
-@import "refills/accordion";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-div.container {
-  @include outer-container;
+.navbar-default {
+  // background-color: #5da2e3;
 }
 
-div.posts_content {
-  @include span-columns(8);
+.navbar-default .navbar-nav > li > a {
+  color: #5da2e3;
 }
 
-div.posts_archive {
-  @include span-columns(3);
+.navbar-default  a.navbar-brand {
+  color: #5da2e3;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active {
+  color: #5da2e3;
 }

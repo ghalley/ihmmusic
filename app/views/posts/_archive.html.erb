@@ -1,36 +1,20 @@
-<ul class="accordion">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <% @post_months.sort.reverse.each do |month, posts| %>
-    <li>
-      <%= link_to month.strftime("%B %Y"), '#', class: 'js-accordion-trigger' %>
-      <ul class="submenu">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <%= link_to month.strftime("%B %Y"), "##{month.strftime("%B %Y").gsub(' ', '_')}", role: "button", 'data-toggle' => "collapse", 'data-parent' => "#accordion", 'aria-expanded' => "false", 'aria-controls' => month.strftime("%B %Y").gsub(' ', '_') %>
+        </h4>
+      </div>
+      <div id="<%= month.strftime("%B %Y").gsub(' ', '_') %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <% posts.each do |post| %>
-          <li>
-            <%= link_to post.title, post_path(post) %>
-          </li>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <%= link_to "#{post.title} - #{post.created_at.strftime("%m/%d")}", post_path(post) %>
+            </li>
+          </ul>
         <% end %>
-      </ul>
-    </li>
+      </div>
+    </div>
   <% end %>
-  <!-- <li>
-    <a href="#" class="js-accordion-trigger">Accordion Item</a>
-    <ul class="submenu">
-      <li>
-        <a href="#">Sub Item 1</a>
-      </li>
-      <li>
-        <a href="#">Sub Item 2</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#" class="js-accordion-trigger">Another Item</a>
-    <ul class="submenu">
-      <li>
-        <a href="#">Sub Item 1</a>
-      </li>
-      <li>
-        <a href="#">Sub Item 2</a>
-      </li>
-    </ul>
-  </li> -->
-</ul>
+</div>

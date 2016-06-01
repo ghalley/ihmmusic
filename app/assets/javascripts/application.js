@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require refills/accordion
-//= require refills/navigation
+//= require bootstrap
