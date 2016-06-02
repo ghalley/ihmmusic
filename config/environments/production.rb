@@ -78,4 +78,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => 'https://sleepy-cliffs-9763.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: Rails.application.secrets.email_address,
+    port: 465,
+    domain: 'ihmmusic.org',
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: Rails.application.secrets.email_username,
+    password: Rails.application.secrets.email_password
+  }
 end
