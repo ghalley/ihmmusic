@@ -3,7 +3,7 @@
 </div>
 
 <div class="posts_content col-md-8">
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
     <div class="post">
       <h2><%= link_to post.title, post %></h2>
       <p></p>
