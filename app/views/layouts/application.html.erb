@@ -12,6 +12,7 @@
 
   <div class="container">
     <% flash.each do |name, msg| -%>
+      <% name = ['success', 'warning', 'danger', 'info'].include?(name) ? name : 'warning' %>
       <%= content_tag :div, msg, class: "alert alert-#{name}" %>
     <% end -%>
     <%= yield %>
