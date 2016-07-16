@@ -13,6 +13,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "clean-blog";
 
 .navbar-default {
   // background-color: #5da2e3;
@@ -27,5 +28,9 @@
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active {
-  color: #5da2e3;
+  color: white;
+  background-color: transparent;
+}
+.post-bg {
+  background-image: image_url('post-bg.jpg');
 }
