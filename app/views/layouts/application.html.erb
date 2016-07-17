@@ -11,7 +11,7 @@
   <%= render :partial => "layouts/navigation"%>
   <!-- Page Header -->
   <!-- Set your background image for this header on the line below. -->
-  <header class="intro-header post-bg">
+  <header class="intro-header <%= Dir.glob("#{Rails.root}/app/assets/images/*bg.jpg").map {|f| File.basename(f).gsub('.jpg', '')}.sample %>">
     <div class="container">
       <%# flash.each do |name, msg| -%>
         <%# name = ['success', 'warning', 'danger', 'info'].include?(name) ? name : 'warning' %>
