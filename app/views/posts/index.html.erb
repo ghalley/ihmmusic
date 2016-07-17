@@ -1,5 +1,9 @@
 <div class="row">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <div class="posts_archive col-md-3">
+    <%= render :partial => "archive" %>
+  </div>
+
+  <div class="col-lg-8 col-md-10">
     <% @posts.each do |post| %>
       <div class="post-preview">
         <a href="<%= post_path(post) %>">
@@ -24,25 +28,4 @@
   </h1>
 
 </div>
-
-<div class="posts_content col-md-8">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <h2><%= link_to post.title, post %></h2>
-      <p></p>
-      <p>
-        <em><%= post.created_at.strftime("%m/%d/%Y") %></em> - 
-        <%= post.content %>
-      </p>
-    </div>
-  <% end %>
-
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-</div>
-
-<div class="posts_archive col-md-4">
-  <%= render :partial => "archive" %>
-</div>
-
-<br>
  -->
