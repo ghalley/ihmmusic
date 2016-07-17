@@ -13,12 +13,7 @@
       <hr>
     <% end -%>
 
-    <!-- Pager -->
-    <ul class="pager">
-        <li class="next">
-            <a href="#">Older Posts &rarr;</a>
-        </li>
-    </ul>
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div>
 </div>
 <!-- 
