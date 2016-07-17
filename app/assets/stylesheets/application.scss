@@ -13,6 +13,10 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "clean-blog";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
 .navbar-default {
   // background-color: #5da2e3;
@@ -27,5 +31,24 @@
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active {
-  color: #5da2e3;
+  color: white;
+  background-color: transparent;
+}
+.post-bg {
+  background-image: image_url('post-bg.jpg');
+}
+.about-bg {
+  background-image: image_url('about-bg.jpg');
+}
+.contact-bg {
+  background-image: image_url('contact-bg.jpg');
+}
+.home-bg {
+  background-image: image_url('home-bg.jpg');
+}
+.pagination {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.posts_archive {
+  padding-top: 40px;
 }

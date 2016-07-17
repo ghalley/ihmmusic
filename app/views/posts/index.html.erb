@@ -1,28 +1,23 @@
-<div class="page-header">
-  <h1>
-    Recent Updates
-    <%= link_to 'New Updates', new_post_path, class: 'pull-right btn btn-primary' unless current_user.nil? %>
-  </h1>
+<div class="row">
+  <div class="posts_archive col-md-3">
+    <%= render :partial => "archive" %>
+      <%= link_to 'New Update', new_post_path, class: 'btn btn-primary' unless current_user.nil? %>
+  </div>
 
+  <div class="col-lg-8 col-md-10">
+    <% @posts.each do |post| %>
+      <div class="post-preview">
+        <a href="<%= post_path(post) %>">
+          <h2 class="post-title"><%= post.title %></h2>
+          <h3 class="post-subtitle">
+            <%= post.content %>
+          </h3>
+        </a>
+        <p class="post-meta">Posted on <%= post.created_at.strftime("%m/%d/%Y") %></p>
+      </div>
+      <hr>
+    <% end -%>
+
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
-
-<div class="posts_content col-md-8">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <h2><%= link_to post.title, post %></h2>
-      <p></p>
-      <p>
-        <em><%= post.created_at.strftime("%m/%d/%Y") %></em> - 
-        <%= post.content %>
-      </p>
-    </div>
-  <% end %>
-
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-</div>
-
-<div class="posts_archive col-md-4">
-  <%= render :partial => "archive" %>
-</div>
-
-<br>

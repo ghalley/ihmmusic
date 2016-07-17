@@ -9,14 +9,72 @@
 </head>
 <body>
   <%= render :partial => "layouts/navigation"%>
+  <!-- Page Header -->
+  <!-- Set your background image for this header on the line below. -->
+  <header class="intro-header <%= Dir.glob("#{Rails.root}/app/assets/images/*bg.jpg").map {|f| File.basename(f).gsub('.jpg', '')}.sample %>">
+    <div class="container">
+      <%# flash.each do |name, msg| -%>
+        <%# name = ['success', 'warning', 'danger', 'info'].include?(name) ? name : 'warning' %>
+        <%#= content_tag :div, msg, class: "alert alert-#{name}" %>
+      <%# end -%>
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <h1>IHM Music Ministry</h1>
+            <hr class="small">
+            <span class="subheading">For All The Needs of IHM's Talented Musicians</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
+
+  <!-- Main Content -->
   <div class="container">
-    <% flash.each do |name, msg| -%>
-      <% name = ['success', 'warning', 'danger', 'info'].include?(name) ? name : 'warning' %>
-      <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-    <% end -%>
     <%= yield %>
   </div>
 
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="list-inline text-center">
+            <li>
+                <a href="http://www.ihmatlanta.org" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-external-link fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/ghalley/ihmmusic" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; IHMMusic.org 2016</p>
+          <p class="copyright text-muted">Theme by <a href="http://startbootstrap.com/template-overviews/clean-blog/" target="_blank">Start Bootstrap</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
+<!--
+  <div class="container">
+    <%# flash.each do |name, msg| -%>
+      <%# name = ['success', 'warning', 'danger', 'info'].include?(name) ? name : 'warning' %>
+      <%#= content_tag :div, msg, class: "alert alert-#{name}" %>
+    <%# end -%>
+    <%#= yield %>
+  </div>
+ -->
 </html>
