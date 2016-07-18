@@ -11,72 +11,78 @@
     </div>
   <% end %>
 
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :first_name, class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name, class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :email, class: 'form-control', type: 'email' %>
+        </div>
+      </div>
+      <% if @user == current_user || !@user.persisted? %>
+        <div class="form-group">
+          <%= f.label :password, class: 'control-label col-sm-4' %>
+          <div class="col-md-6">
+            <%= f.text_field :password, class: 'form-control', type: 'password' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: 'control-label col-sm-4' %>
+          <div class="col-md-6">
+            <%= f.text_field :password_confirmation, class: 'form-control', type: 'password' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label 'Street Address', class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :street_address1, class: 'form-control', type: 'text' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Street Address 2', class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :street_address2, class: 'form-control', type: 'text' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :city, class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :city, class: 'form-control', type: 'text' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :state, class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :state, class: 'form-control', type: 'text' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :zip_code, class: 'control-label col-sm-4' %>
+        <div class="col-md-6">
+          <%= f.text_field :zip_code, class: 'form-control', type: 'text' %>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :first_name, class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :first_name, class: 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :last_name, class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :last_name, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :email, class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :email, class: 'form-control', type: 'email' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label 'Street Address', class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :street_address1, class: 'form-control', type: 'text' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label 'Street Address 2', class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :street_address2, class: 'form-control', type: 'text' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :city, class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :city, class: 'form-control', type: 'text' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :state, class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :state, class: 'form-control', type: 'text' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :zip_code, class: 'control-label col-sm-2' %>
-    <div class="col-md-3">
-      <%= f.text_field :zip_code, class: 'form-control', type: 'text' %>
-    </div>
-  </div>
-  <% if @user == current_user || !@user.persisted? %>
-    <div class="form-group">
-      <%= f.label :password, class: 'control-label col-sm-2' %>
-      <div class="col-md-3">
-        <%= f.text_field :password, class: 'form-control', type: 'password' %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :password_confirmation, class: 'control-label col-sm-2' %>
-      <div class="col-md-3">
-        <%= f.text_field :password_confirmation, class: 'form-control', type: 'password' %>
-      </div>
-    </div>
-  <% end %>
 
   <div class="form-group col-md-4">
-    <div class="col-md-offset-6 col-md-10">
+    <div class="col-md-offset-7 col-md-10">
       <%= f.submit "#{params[:action] == 'edit' ? 'Save' : 'Create'}", class: 'btn btn-primary' %>
       <%= link_to 'Cancel', posts_path, class: 'btn btn-default' %>
     </div>
