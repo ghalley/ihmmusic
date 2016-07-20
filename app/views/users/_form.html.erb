@@ -35,7 +35,8 @@
         <div class="form-group">
           <%= f.label :password, class: 'control-label col-sm-4' %>
           <div class="col-md-6">
-            <%= f.text_field :password, class: 'form-control', type: 'password' %>
+            <%= f.text_field :password, class: 'form-control', type: 'password', 'aria-describedby' => "user_password_hint" %>
+            <span id="user_password_hint" class="help-block">Minimum 8 characters</span>
           </div>
         </div>
         <div class="form-group">
