@@ -112,6 +112,7 @@ GEM
     refills (0.1.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rolify (5.1.0)
     sass (3.4.21)
     spring (1.4.0)
     sprockets (3.4.0)
@@ -151,6 +152,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails_12factor
   refills
+  rolify
   sass
   spring
   sqlite3
@@ -159,4 +161,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.10.6
+   1.12.5
