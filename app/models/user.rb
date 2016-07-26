@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include Authority::UserAbilities
+  include Authority::Abilities
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

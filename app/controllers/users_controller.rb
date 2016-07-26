@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :authenticate_user!
   before_action :set_roles, only: [:create, :update]
+  authorize_actions_for User, except: [:edit, :update]
 
   # GET /users
   # GET /users.json
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    authorize_action_for @user
   end
 
   # POST /users
@@ -42,6 +44,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    authorize_action_for @user
     clean_passwords
     respond_to do |format|
       if @user.update(user_params)
