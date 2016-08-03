@@ -20,7 +20,7 @@
           <%= user.street_address2 %><br/>
           <%= user.city %> <%= ", #{user.state}" if user.state.present? %> <%= user.zip_code %>
         </td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) if current_user.can_update?(user) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path, class: 'btn btn-primary' %>
+<%= link_to 'New User', new_user_path, class: 'btn btn-primary' if current_user.can_create?(User) %>
