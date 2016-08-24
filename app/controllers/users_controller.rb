@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :authenticate_user!
-  before_action :set_roles, only: [:create, :update]
+  before_action :set_roles, only: :update
   authorize_actions_for User, except: [:edit, :update]
 
   # GET /users
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    set_roles
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_path, flash: {success: 'User was successfully created.'} }
