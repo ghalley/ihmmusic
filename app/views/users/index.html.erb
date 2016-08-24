@@ -17,7 +17,7 @@
         <td><%= user.email %></td>
         <td>
           <%= user.street_address1 %><br/>
-          <%= user.street_address2 %><br/>
+          <%= "#{user.street_address2}<br/>".html_safe if user.street_address2.present? %>
           <%= user.city %> <%= ", #{user.state}" if user.state.present? %> <%= user.zip_code %>
         </td>
         <td><%= link_to 'Edit', edit_user_path(user) if current_user.can_update?(user) %></td>
