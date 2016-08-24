@@ -26,7 +26,7 @@
           <%= link_to 'Users', users_path unless current_user.nil? %>
         </li>
         <li>
-          <% if current_user.nil? && params['action'] != 'new' %>
+          <% if current_user.nil? && params['action'] != 'new' || params['controller'].scan('devise').present? %>
             <%= link_to "Log in", new_session_path(User.new), class: 'sign-up'  %>
           <% else %>
             <%= link_to "Log out", destroy_session_path(User), method: :delete, class: 'sign-up' %>
